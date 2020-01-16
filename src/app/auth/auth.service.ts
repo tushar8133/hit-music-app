@@ -14,8 +14,8 @@ export class AuthService {
   storeUserInfo(res){
     let {email, localId, idToken, expiresIn} = res;
     this.token = idToken;
-    let expiryDate = (new Date().getTime()) + Number(expiresIn) * 1000;
-    let userInfo = new User(email, localId, idToken, expiryDate);
+    let expiryDate = Number(new Date().getTime()) + Number(expiresIn) * 1000;
+    let userInfo = new User(email, localId, idToken, new Date(expiryDate));
     this.userSubject.next(userInfo);
   }
 
@@ -27,10 +27,6 @@ export class AuthService {
       returnSecureToken: true
     };
     return this.http.post(endpoint, payload).pipe( tap( res => this.storeUserInfo(res)) );
-    // return this.http.post(endpoint, payload).pipe( tap( res => {
-    //   console.log(">>",res['idToken'])
-    //   this.newToken = res['idToken'];
-    //   }) );
   }
 
   register(username, password) {
@@ -44,7 +40,7 @@ export class AuthService {
   }
 
   logout(){
-    let userInfo = new User(null);
+    let userInfo = new User(null, null, null, null);
     this.userSubject.next(userInfo);
     return Observable.create( (observer) => {
       observer.next();
