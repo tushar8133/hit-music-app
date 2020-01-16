@@ -15,7 +15,9 @@ export class AuthService {
     let {email, localId, idToken, expiresIn} = res;
     this.token = idToken;
     let expiryDate = Number(new Date().getTime()) + Number(expiresIn) * 1000;
-    let userInfo = new User(email, localId, idToken, new Date(expiryDate));
+    let userInfo = new User();
+    userInfo.save(email, localId, idToken, String(expiryDate));
+
     this.userSubject.next(userInfo);
   }
 
@@ -40,7 +42,7 @@ export class AuthService {
   }
 
   logout(){
-    let userInfo = new User(null, null, null, null);
+    let userInfo = new User();
     this.userSubject.next(userInfo);
     return Observable.create( (observer) => {
       observer.next();

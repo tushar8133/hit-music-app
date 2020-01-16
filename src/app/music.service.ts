@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { take, exhaustMap, mergeAll, toArray, map, filter, pluck, concatMap, tap, flatMap, switchMap } from 'rxjs/operators'
 import { from } from 'rxjs';
 import { AuthService } from './auth/auth.service';
+import { User } from './auth/user.model';
 
 @Injectable()
 export class MusicService {
   data;
   databaseURL = "https://tushar8133-musicdb.firebaseio.com";
 
-  constructor(private httpClient: HttpClient, private authService: AuthService) { 
+  constructor(private httpClient: HttpClient,
+    private authService: AuthService) { 
   }
 
   getToken():string{
@@ -17,6 +19,7 @@ export class MusicService {
   }
 
   getDefaultData(){
+    // if(!this.user.token) return;
     return this.httpClient.get(`${this.databaseURL}/.json?auth=${this.getToken()}`)
     .pipe(
       map( obs => (Object.keys(obs)).map( (id) => obs[id]) )

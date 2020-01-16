@@ -13,6 +13,7 @@ import { PlayerComponent } from './player/player.component';
 import { WireService } from './wire.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
+import { User } from './auth/user.model';
 
 
 @NgModule({
