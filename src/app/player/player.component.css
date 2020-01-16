@@ -1,0 +1,44 @@
+.seekbar{
+  border: 1px solid lightgrey;
+  width: 100%;
+  display: block;
+  clear: both;
+  height: 4px;
+}
+
+.progressbar {
+  width: 50%;
+  height: 4px;
+  display: block;
+  background-color: green;
+}
+
+.seekbar-left{
+  float: left;
+}
+
+.seekbar-right{
+  float: right;
+}
+
+.player-timer{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 10px;
+  margin-top: 10px;
+}
+.player-controls {
+  text-align: center;
+  margin-top: 5px;
+}
+.player-controls button{
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid lightgrey; */
+  padding: 0;
+  margin: 1px;
+}
+
+.material-icons-outlined {
+  font-size: 150%;
+  
+}

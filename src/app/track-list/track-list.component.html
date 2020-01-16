@@ -1,0 +1,8 @@
+<section>
+	<ul>
+		<h3>Songs</h3>
+		<li *ngFor="let song of trackList" (click)="setTrack(song)">
+			<span [class.selectedHighlight]="currentlySelected?.track == song.track">{{song.track | number: '2.'}} &ndash; {{song.title}} &mdash; {{song.duration | time}}</span>
+		</li>
+	</ul>
+</section>

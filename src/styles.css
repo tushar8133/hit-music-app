@@ -1,0 +1,39 @@
+/* Add application styles & imports to this file! */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+}
+
+section {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 5px;
+}
+
+li:hover {
+  /* background-color: lightgoldenrodyellow; */
+  cursor: default;
+}
+
+.selectedHighlight {
+  background-color: green;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h3{
+  margin: 0;
+  padding-bottom: 5px;
+  color: greenyellow;
+}
+
+h2 {
+  text-align: center;
+}

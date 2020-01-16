@@ -1,0 +1,8 @@
+<section>
+	<ul>
+		<h3>Albums</h3>
+		<li *ngFor="let album of albums" (click)="setAlbum(album)">
+			<span [class.selectedHighlight]="album === currentlySelected">{{album}}</span>
+		</li>
+	</ul>
+</section>

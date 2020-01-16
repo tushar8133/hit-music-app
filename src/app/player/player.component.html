@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+
+<section>
+	<h3><i class="material-icons-round">play_arrow</i>Now Playing</h3>
+	<div>
+		{{song?.title}}<br>
+  {{song?.album}}<br>
+  {{song?.artist | uppercase}}
+
+		<div class="player-timer">
+			<span class="seekbar-left">00:00</span><span class="seekbar-right">{{song?.duration}}</span>
+			<span class="seekbar"><span class="progressbar"></span></span>
+		</div>
+	</div>
+	<div class="player-controls">
+		<button><i class="material-icons-outlined">play_arrow</i></button>
+		<button><i class="material-icons-outlined">pause</i></button>
+		<button><i class="material-icons-outlined">stop</i></button>
+		<button><i class="material-icons-outlined">skip_previous</i></button>
+		<button><i class="material-icons-outlined">fast_rewind</i></button>
+		<button><i class="material-icons-outlined">fast_forward</i></button>
+		<button><i class="material-icons-outlined">skip_next</i></button>
+		<button><i class="material-icons-outlined">repeat</i></button>
+		<button><i class="material-icons-outlined">shuffle</i></button>
+		<button><i class="material-icons-outlined">volume_up</i></button>
+		<button><i class="material-icons-outlined">volume_down</i></button>
+		<button><i class="material-icons-outlined">volume_off</i></button>
+	</div>
+</section>
+<!-- 
+https://material.io/resources/icons/?icon=eject&style=outline
+<i class="material-icons">donut_small</i>
+<i class="material-icons-outlined">donut_small</i>
+<i class="material-icons-two-tone">donut_small</i>
+<i class="material-icons-round">donut_small</i>
+<i class="material-icons-sharp">donut_small</i>
+-->

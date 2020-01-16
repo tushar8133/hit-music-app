@@ -1,0 +1,8 @@
+<section>
+	<ul>
+		<h3>Artist</h3>
+		<li *ngFor="let artist of artists" (click)="setArtistName(artist)">
+			<span [class.selectedHighlight]="selectedArtist === artist">{{artist}}</span>
+		</li>
+	</ul>
+</section>

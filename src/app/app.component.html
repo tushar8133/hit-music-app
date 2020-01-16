@@ -1,0 +1,10 @@
+<div><app-auth></app-auth></div>
+<h2>Hit-Music dot com</h2>
+
+<app-player></app-player>
+
+<app-artist-list (eventSelectedArtist)="selectedArtist = $event"></app-artist-list>
+
+<app-album-list [artist]="selectedArtist" (emitAlbum)="selectedAlbum = $event"></app-album-list>
+
+<app-track-list [album]="selectedAlbum"></app-track-list>

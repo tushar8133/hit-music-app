@@ -1,0 +1,17 @@
+<div *ngIf="isUserAuthentic">Hello user</div>
+<div class="dropdown">
+  <div class="dropbtn"><i class="material-icons">person</i></div>
+  <section class="dropdown-content">
+		<form #form="ngForm">
+			<input type="text" placeholder="Username" name="username" [(ngModel)]="username"/>
+			<br>
+			<input type="password" placeholder="Password" name="password" [(ngModel)]="password"/>
+			<br>
+			<div class="btn-box">
+        <button (click)="login(form)">Login</button>
+				<button (click)="register(form)">Register</button>
+        <button (click)="logout(form)">Logout</button>
+			</div>
+		</form>
+	</section>
+</div>
